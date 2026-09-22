@@ -17,6 +17,8 @@ jobs:
       GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
       NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
       RESUME_PATH: resume/Santhosh_Devops_Engineer.pdf
+      AGENT_TOOLSDIRECTORY: /Users/sanfitlegacyhub/hostedtoolcache
+      RUNNER_TOOL_CACHE: /Users/sanfitlegacyhub/hostedtoolcache
 
     steps:
       - uses: actions/checkout@v4
@@ -29,12 +31,13 @@ jobs:
           echo "GMAIL_APP_PASS length : ${#GMAIL_APP_PASS}"
           echo "NOTIFY_EMAIL length   : ${#NOTIFY_EMAIL}"
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+      - name: Check Python
+        run: |
+          python3 --version
+          pip3 --version
 
       - name: Install dependencies
-        run: pip install requests==2.31.0
+        run: pip3 install requests==2.31.0
 
       - name: Debug env vars
         run: |
@@ -60,4 +63,4 @@ jobs:
           fi
 
       - name: Run Naukri Agent
-        run: python agent/naukri_agent.py
+        run: python3 agent/naukri_agent.py
