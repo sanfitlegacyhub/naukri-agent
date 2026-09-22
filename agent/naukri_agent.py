@@ -97,22 +97,32 @@ def log(msg: str):
 def login() -> str:
     log("Logging in to Naukri...")
 
-    # Step 1a — get CSRF / cookies from homepage first
-    session.get("https://www.naukri.com", timeout=15)
+    # Step 1a — fetch homepage to get initial cookies
+    session.get("https://www.naukri.com/", timeout=15)
 
-    # Step 1b — login with correct Naukri v2 payload
-    resp = session.post(
-        "https://www.naukri.com/central-login-services/v2/login",
-        json={
-            "username"    : NAUKRI_EMAIL,
-            "password"    : NAUKRI_PASSWORD,
-            "type"        : "login",
-        },
-        timeout=30,
-    )
-    log(f"  Login HTTP status: {resp.status_code}")
-    if resp.status_code not in (200, 201):
-        raise RuntimeError(f"Login failed — HTTP {resp.status_code}: {resp.text[:400]}")
+    # Step 1b — try all known Naukri login endpoints
+    endpoints = [
+        ("POST", "https://www.naukri.com/central-login-services/v1/login",
+         {"username": NAUKRI_EMAIL, "password": NAUKRI_PASSWORD}),
+        ("POST", "https://www.naukri.com/login",
+         {"username": NAUKRI_EMAIL, "password": NAUKRI_PASSWORD}),
+        ("POST", "https://www.naukri.com/jobseeker/login",
+         {"username": NAUKRI_EMAIL, "password": NAUKRI_PASSWORD}),
+    ]
+
+    resp = None
+    for method, url, payload in endpoints:
+        log(f"  Trying: {url}")
+        resp = session.post(url, json=payload, timeout=30)
+        log(f"  Status: {resp.status_code}")
+        if resp.status_code in (200, 201):
+            log(f"  ✅ Login succeeded at: {url}")
+            break
+        else:
+            log(f"  ❌ Failed: {resp.text[:150]}")
+
+    if resp is None or resp.status_code not in (200, 201):
+        raise RuntimeError(f"All login endpoints failed. Last status: {resp.status_code if resp else 'N/A'}")
 
     data = resp.json()
     token = (
