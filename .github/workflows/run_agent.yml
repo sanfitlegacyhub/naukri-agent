@@ -37,7 +37,7 @@ jobs:
           pip3 --version
 
       - name: Install dependencies
-        run: pip3 install requests==2.31.0
+        run: pip3 install selenium webdriver-manager
 
       - name: Debug env vars
         run: |
