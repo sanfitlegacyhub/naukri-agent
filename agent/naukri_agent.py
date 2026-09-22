@@ -78,14 +78,34 @@ def login(driver: webdriver.Chrome, email: str, password: str):
         time.sleep(0.03)
 
     time.sleep(1)
-    login_btn = wait.until(EC.presence_of_element_located(
-        (By.XPATH, "//button[@type='submit' or contains(@class,'loginButton') or text()='Login']")
-    ))
-    driver.execute_script("arguments[0].click();", login_btn)
+    # Try finding and clicking login button using multiple fallback locators
+    button_xpaths = [
+        "//button[@type='submit']",
+        "//button[contains(@class,'login')]",
+        "//button[contains(text(),'Login')]",
+        "//form//button",
+    ]
+    login_btn = None
+    for xpath in button_xpaths:
+        try:
+            elems = driver.find_elements(By.XPATH, xpath)
+            if elems:
+                login_btn = elems[0]
+                break
+        except Exception:
+            continue
+
+    if login_btn:
+        driver.execute_script("arguments[0].click();", login_btn)
+    else:
+        # Fallback: Press enter on password field
+        from selenium.webdriver.common.keys import Keys
+        pass_field.send_keys(Keys.RETURN)
+
     log("Submitted login credentials.")
 
     # Wait for login redirect
-    for _ in range(10):
+    for _ in range(15):
         time.sleep(1)
         if "nlogin" not in driver.current_url.lower():
             break
@@ -94,9 +114,12 @@ def login(driver: webdriver.Chrome, email: str, password: str):
         # Check if error message is present
         try:
             err = driver.find_element(By.XPATH, "//*[contains(@class,'server-err') or contains(@class,'error')]").text
-            raise RuntimeError(f"Login failed: {err}")
-        except Exception:
-            raise RuntimeError("Login failed: Still on login page after submission.")
+            if err.strip():
+                raise RuntimeError(f"Login failed with error: {err.strip()}")
+        except Exception as e:
+            if "Login failed with error" in str(e):
+                raise
+        raise RuntimeError("Login failed: Still on login page after submission.")
     log("Logged in successfully.")
 
 
