@@ -80,13 +80,22 @@ def log(msg: str):
 # ─── Step 1 : Login ───────────────────────────────────────────────────────────
 def login() -> str:
     log("Logging in to Naukri...")
-    payload = {
-        "username": NAUKRI_EMAIL,
-        "password": NAUKRI_PASSWORD,
-    }
+    # Debug: confirm secrets loaded correctly (password masked)
+    log(f"  NAUKRI_EMAIL    = '{NAUKRI_EMAIL}'")
+    log(f"  NAUKRI_PASSWORD = '{'*' * len(NAUKRI_PASSWORD) if NAUKRI_PASSWORD else 'EMPTY!!!'}'")
+
     resp = session.post(
         f"{API_BASE}/login",
-        json=payload,
+        json={
+            "username": NAUKRI_EMAIL,
+            "password": NAUKRI_PASSWORD,
+        },
+        headers={
+            **session.headers,
+            "Content-Type": "application/json",
+            "appid"       : "109",
+            "systemid"    : "Naukri",
+        },
         timeout=30,
     )
     if resp.status_code != 200:
