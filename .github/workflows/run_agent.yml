@@ -1,0 +1,36 @@
+name: Naukri Daily Agent
+
+on:
+  schedule:
+    - cron: '30 3 * * *'   # 9 AM IST daily
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify file
+        run: |
+          git log --oneline -1
+          ls -la agent/
+          head -5 agent/naukri_agent.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: pip install requests==2.31.0
+
+      - name: Run
+        env:
+          NAUKRI_EMAIL:    ${{ secrets.NAUKRI_EMAIL }}
+          NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
+          GMAIL_USER:      ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
+          NOTIFY_EMAIL:    ${{ secrets.NOTIFY_EMAIL }}
+          RESUME_PATH:     resume/Santhosh_Devops_Engineer.pdf
+        run: python agent/naukri_agent.py
