@@ -16,12 +16,26 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # ─── Config from environment variables ────────────────────────────────────────
-NAUKRI_EMAIL    = os.environ["NAUKRI_EMAIL"]       # santhoshgowda360@gmail.com
-NAUKRI_PASSWORD = os.environ["NAUKRI_PASSWORD"]
-GMAIL_USER      = os.environ["GMAIL_USER"]         # santhoshramesh.rs@gmail.com
-GMAIL_APP_PASS  = os.environ["GMAIL_APP_PASS"]
-NOTIFY_EMAIL    = os.environ.get("NOTIFY_EMAIL", "santhoshramesh.rs@gmail.com")
-RESUME_PATH     = os.environ.get("RESUME_PATH", "resume/Santhosh_Devops_Engineer.pdf")
+def _require_env(key: str) -> str:
+    val = os.environ.get(key, "").strip()
+    if not val:
+        raise EnvironmentError(f"❌ Required secret '{key}' is missing or empty in GitHub Secrets!")
+    return val
+
+NAUKRI_EMAIL    = _require_env("NAUKRI_EMAIL")
+NAUKRI_PASSWORD = _require_env("NAUKRI_PASSWORD")
+GMAIL_USER      = _require_env("GMAIL_USER")
+GMAIL_APP_PASS  = _require_env("GMAIL_APP_PASS")
+NOTIFY_EMAIL    = os.environ.get("NOTIFY_EMAIL", "santhoshramesh.rs@gmail.com").strip()
+RESUME_PATH     = os.environ.get("RESUME_PATH", "resume/Santhosh_Devops_Engineer.pdf").strip()
+
+# ─── Startup check: print all config (passwords masked) ───────────────────────
+print(f"[CONFIG] NAUKRI_EMAIL    = '{NAUKRI_EMAIL}'")
+print(f"[CONFIG] NAUKRI_PASSWORD = '{'*' * len(NAUKRI_PASSWORD)}'")
+print(f"[CONFIG] GMAIL_USER      = '{GMAIL_USER}'")
+print(f"[CONFIG] GMAIL_APP_PASS  = '{'*' * len(GMAIL_APP_PASS)}'")
+print(f"[CONFIG] NOTIFY_EMAIL    = '{NOTIFY_EMAIL}'")
+print(f"[CONFIG] RESUME_PATH     = '{RESUME_PATH}'")
 
 # ─── Profile update values ────────────────────────────────────────────────────
 # Name          : Santhosh N R
