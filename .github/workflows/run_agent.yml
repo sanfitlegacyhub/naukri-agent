@@ -35,5 +35,28 @@ jobs:
       - name: Install dependencies
         run: pip install requests==2.31.0
 
+      - name: Debug env vars
+        run: |
+          if [ -z "$NAUKRI_EMAIL" ]; then
+            echo "❌ NAUKRI_EMAIL is EMPTY"
+          else
+            echo "✅ NAUKRI_EMAIL is set (length: ${#NAUKRI_EMAIL})"
+          fi
+          if [ -z "$NAUKRI_PASSWORD" ]; then
+            echo "❌ NAUKRI_PASSWORD is EMPTY"
+          else
+            echo "✅ NAUKRI_PASSWORD is set (length: ${#NAUKRI_PASSWORD})"
+          fi
+          if [ -z "$GMAIL_USER" ]; then
+            echo "❌ GMAIL_USER is EMPTY"
+          else
+            echo "✅ GMAIL_USER is set (length: ${#GMAIL_USER})"
+          fi
+          if [ -z "$GMAIL_APP_PASS" ]; then
+            echo "❌ GMAIL_APP_PASS is EMPTY"
+          else
+            echo "✅ GMAIL_APP_PASS is set (length: ${#GMAIL_APP_PASS})"
+          fi
+
       - name: Run Naukri Agent
         run: python agent/naukri_agent.py
