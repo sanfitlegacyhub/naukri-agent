@@ -2,35 +2,38 @@ name: Naukri Daily Agent
 
 on:
   schedule:
-    - cron: '30 3 * * *'   # 9 AM IST daily
+    - cron: '30 3 * * *'
   workflow_dispatch:
 
 jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+
+    env:
+      NAUKRI_EMAIL: ${{ secrets.NAUKRI_EMAIL }}
+      NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
+      GMAIL_USER: ${{ secrets.GMAIL_USER }}
+      GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+      NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+      RESUME_PATH: resume/Santhosh_Devops_Engineer.pdf
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify file
+      - name: Verify secrets loaded
         run: |
-          git log --oneline -1
-          ls -la agent/
-          head -5 agent/naukri_agent.py
+          echo "NAUKRI_EMAIL is set: ${{ secrets.NAUKRI_EMAIL != '' }}"
+          echo "NAUKRI_PASSWORD is set: ${{ secrets.NAUKRI_PASSWORD != '' }}"
+          echo "GMAIL_USER is set: ${{ secrets.GMAIL_USER != '' }}"
+          echo "GMAIL_APP_PASS is set: ${{ secrets.GMAIL_APP_PASS != '' }}"
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install
+      - name: Install dependencies
         run: pip install requests==2.31.0
 
-      - name: Run
-        env:
-          NAUKRI_EMAIL:    ${{ secrets.NAUKRI_EMAIL }}
-          NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
-          GMAIL_USER:      ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
-          NOTIFY_EMAIL:    ${{ secrets.NOTIFY_EMAIL }}
-          RESUME_PATH:     resume/Santhosh_Devops_Engineer.pdf
+      - name: Run Naukri Agent
         run: python agent/naukri_agent.py
