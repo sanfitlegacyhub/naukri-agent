@@ -103,39 +103,58 @@ def login(driver: webdriver.Chrome):
     driver.get("https://www.naukri.com/nlogin/login")
     wait = WebDriverWait(driver, 20)
 
-    # Enter email
-    email_field = wait.until(EC.presence_of_element_located((By.ID, "usernameField")))
+    # Wait for email field
+    email_field = wait.until(EC.element_to_be_clickable((By.ID, "usernameField")))
+    time.sleep(1)
+    email_field.click()
     email_field.clear()
-    email_field.send_keys(NAUKRI_EMAIL)
-    log("  Email entered")
+    # Type character by character to avoid bot detection
+    for ch in NAUKRI_EMAIL:
+        email_field.send_keys(ch)
+        time.sleep(0.05)
+    log(f"  Email entered: {NAUKRI_EMAIL[:4]}***")
+
+    time.sleep(0.5)
 
     # Enter password
-    pass_field = driver.find_element(By.ID, "passwordField")
+    pass_field = wait.until(EC.element_to_be_clickable((By.ID, "passwordField")))
+    pass_field.click()
     pass_field.clear()
-    pass_field.send_keys(NAUKRI_PASSWORD)
+    for ch in NAUKRI_PASSWORD:
+        pass_field.send_keys(ch)
+        time.sleep(0.05)
     log("  Password entered")
 
+    time.sleep(0.5)
+
+    # Screenshot before clicking login (to see what's on screen)
+    screenshot_path = "/tmp/naukri_before_login.png"
+    driver.save_screenshot(screenshot_path)
+    log(f"  Screenshot saved: {screenshot_path}")
+
     # Click login button
-    login_btn = driver.find_element(By.XPATH, "//button[@type='submit']")
+    login_btn = wait.until(EC.element_to_be_clickable(
+        (By.XPATH, "//button[@type='submit' and contains(@class,'login')]")
+    ))
     login_btn.click()
     log("  Login button clicked")
 
-    # Wait for redirect after login
-    time.sleep(4)
+    # Wait for redirect
+    time.sleep(5)
     current_url = driver.current_url
-    log(f"  Current URL after login: {current_url}")
+    log(f"  URL after login: {current_url}")
 
-    if "nlogin" in current_url or "login" in current_url.lower():
-        # Check for error message
-        try:
-            err = driver.find_element(By.CLASS_NAME, "errLbl")
-            raise RuntimeError(f"Login failed — Naukri error: {err.text}")
-        except Exception as e:
-            if "Login failed" in str(e):
-                raise
-            raise RuntimeError(f"Login failed — still on login page: {current_url}")
+    # Screenshot after login attempt
+    driver.save_screenshot("/tmp/naukri_after_login.png")
 
-    log("Login successful ✅")
+    if "nlogin" not in current_url and "login" not in current_url.lower():
+        log("Login successful ✅")
+        return
+
+    # Still on login page — capture page source for diagnosis
+    page_text = driver.find_element(By.TAG_NAME, "body").text[:500]
+    log(f"  Page content: {page_text}")
+    raise RuntimeError(f"Login failed — still on login page. Body: {page_text[:200]}")
 
 # ─── Step 2 : Upload Resume ───────────────────────────────────────────────────
 def upload_resume(driver: webdriver.Chrome) -> bool:
