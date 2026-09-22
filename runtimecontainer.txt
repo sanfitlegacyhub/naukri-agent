@@ -1,0 +1,1139 @@
+HOST_DIR=
+SERVICE_NAME=
+Running in a container
+/health endpoint access set to Anonymous
+/metrics endpoint access set to Anonymous
+No certificate directory found at /etc/certs/ibm, skipping certificate import
+No truststore password secret found at /etc/secret-volume/.truststore-secret-file
+Using default truststore password
+BINDIR: ./opt/webmethods/IntegrationServer/bin
+BINDIR_CLEAN: /opt/webmethods/IntegrationServer/bin
+FIPS mode is disabled - checking if rahas.mar needs to be restored
+rahas.mar already exists at: /opt/webmethods/IntegrationServer/bin/../config/wss/modules/rahas.mar
+Starting IBM webMethods Microservices Runtime
+DEBUG 2026-09-02 08:14:14:176 main AgentPackagePath :  The beacon class location is jar:file:/opt/webmethods/E2EMonitoring/agent/uha-apm-agent.jar!/org/apache/skywalking/apm/agent/core/boot/AgentPackagePath.class. 
+INFO 2026-09-02 08:14:14:178 main SnifferConfigInitializer :  Config file found in /opt/webmethods/E2EMonitoring/agent/config/agent.config. 
+INFO 2026-09-02 08:14:14:227 main SnifferConfigInitializer :  Agent options is logging.dir=./logs/. 
+08:14:14,795 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.LoggerContext[default] - Found logback-core version 1.5.35
+08:14:14,797 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.util.ContextInitializer@5f082a9d - No custom configurators were discovered as a service.
+08:14:14,797 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.util.ContextInitializer@5f082a9d - Trying to configure with org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.util.DefaultJoranConfigurator
+08:14:14,798 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.util.ContextInitializer@5f082a9d - Constructed configurator of type class org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.util.DefaultJoranConfigurator
+08:14:14,801 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.LoggerContext[default] - Found resource [/opt/webmethods/IntegrationServer/e2ecustomlogback.xml] at [file:/opt/webmethods/IntegrationServer/e2ecustomlogback.xml]
+08:14:14,981 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Scan attribute set to true. Will scan for configuration file changes.
+08:14:14,989 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1788336854985)
+08:14:14,995 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [/opt/webmethods/IntegrationServer/e2ecustomlogback.xml] 
+08:14:14,996 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+08:14:15,006 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Main configuration file URL: file:/opt/webmethods/IntegrationServer/e2ecustomlogback.xml
+08:14:15,006 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - FileWatchList= {/opt/webmethods/IntegrationServer/e2ecustomlogback.xml}
+08:14:15,006 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - URLWatchList= {}
+08:14:15,016 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [STDOUT] not referenced. Skipping further processing.
+08:14:15,016 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [AGENT_SUMMARY]
+08:14:15,016 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender]
+08:14:15,091 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@-484153326 - Will use gz compression
+08:14:15,093 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@-484153326 - Will use the pattern ./logs/e2eagentSummary.%d{yyyy-MM-dd}.%i for the active file
+08:14:15,093 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4749665c - SizeAndTimeBasedFNATP class was renamed as SizeAndTimeBasedFileNamingAndTriggeringPolicy.
+08:14:15,097 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4749665c - The date pattern is 'yyyy-MM-dd' from file name pattern './logs/e2eagentSummary.%d{yyyy-MM-dd}.%i.gz'.
+08:14:15,097 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4749665c - Roll-over at midnight.
+08:14:15,100 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4749665c - Setting initial period to 2026-09-02T08:14:15.097Z
+08:14:15,100 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4749665c - Direct use of either SizeAndTimeBasedFNATP or SizeAndTimeBasedFileNamingAndTriggeringPolicy 
+08:14:15,100 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4749665c - is deprecated. Please use SizeAndTimeBasedRollingPolicy instead.
+08:14:15,100 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@4749665c - For more information see https://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:14:15,107 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[AGENT_SUMMARY] - Active log file name: ./logs/e2eagentSummary.log
+08:14:15,108 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[AGENT_SUMMARY] - File property is set to [./logs/e2eagentSummary.log]
+08:14:15,109 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [E2E_AGENT_TRACES]
+08:14:15,109 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender]
+08:14:15,111 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@-183228279 - Will use gz compression
+08:14:15,111 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@-183228279 - Will use the pattern ./logs/e2etraces.%d{yyyy-MM-dd}.%i for the active file
+08:14:15,111 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ce27b13 - SizeAndTimeBasedFNATP class was renamed as SizeAndTimeBasedFileNamingAndTriggeringPolicy.
+08:14:15,112 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ce27b13 - The date pattern is 'yyyy-MM-dd' from file name pattern './logs/e2etraces.%d{yyyy-MM-dd}.%i.gz'.
+08:14:15,112 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ce27b13 - Roll-over at midnight.
+08:14:15,112 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ce27b13 - Setting initial period to 2026-09-02T08:14:15.112Z
+08:14:15,112 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ce27b13 - Direct use of either SizeAndTimeBasedFNATP or SizeAndTimeBasedFileNamingAndTriggeringPolicy 
+08:14:15,112 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ce27b13 - is deprecated. Please use SizeAndTimeBasedRollingPolicy instead.
+08:14:15,112 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5ce27b13 - For more information see https://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:14:15,112 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[E2E_AGENT_TRACES] - Active log file name: ./logs/e2etraces.log
+08:14:15,112 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[E2E_AGENT_TRACES] - File property is set to [./logs/e2etraces.log]
+08:14:15,113 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [E2E_AGENT_FAILED_SEGMENTS]
+08:14:15,113 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender]
+08:14:15,114 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@-479535244 - Will use gz compression
+08:14:15,114 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@-479535244 - Will use the pattern ./logs/e2eagentFailedSegments.%d{yyyy-MM-dd}.%i for the active file
+08:14:15,114 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@e1cb6cd7 - SizeAndTimeBasedFNATP class was renamed as SizeAndTimeBasedFileNamingAndTriggeringPolicy.
+08:14:15,115 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@e1cb6cd7 - The date pattern is 'yyyy-MM-dd' from file name pattern './logs/e2eagentFailedSegments.%d{yyyy-MM-dd}.%i.gz'.
+08:14:15,115 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@e1cb6cd7 - Roll-over at midnight.
+08:14:15,115 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@e1cb6cd7 - Setting initial period to 2026-09-02T08:14:15.115Z
+08:14:15,115 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@e1cb6cd7 - Direct use of either SizeAndTimeBasedFNATP or SizeAndTimeBasedFileNamingAndTriggeringPolicy 
+08:14:15,115 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@e1cb6cd7 - is deprecated. Please use SizeAndTimeBasedRollingPolicy instead.
+08:14:15,115 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@e1cb6cd7 - For more information see https://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:14:15,115 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[E2E_AGENT_FAILED_SEGMENTS] - Active log file name: ./logs/e2eagentFailedSegments.log
+08:14:15,115 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[E2E_AGENT_FAILED_SEGMENTS] - File property is set to [./logs/e2eagentFailedSegments.log]
+08:14:15,116 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [E2E_AGENT_OTLP_TRACES]
+08:14:15,116 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender]
+08:14:15,117 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1840496626 - Will use gz compression
+08:14:15,117 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1840496626 - Will use the pattern ./logs/e2eagentOtlpTraces.%d{yyyy-MM-dd}.%i for the active file
+08:14:15,117 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@374b25f7 - SizeAndTimeBasedFNATP class was renamed as SizeAndTimeBasedFileNamingAndTriggeringPolicy.
+08:14:15,118 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@374b25f7 - The date pattern is 'yyyy-MM-dd' from file name pattern './logs/e2eagentOtlpTraces.%d{yyyy-MM-dd}.%i.gz'.
+08:14:15,118 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@374b25f7 - Roll-over at midnight.
+08:14:15,118 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@374b25f7 - Setting initial period to 2026-09-02T08:14:15.118Z
+08:14:15,118 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@374b25f7 - Direct use of either SizeAndTimeBasedFNATP or SizeAndTimeBasedFileNamingAndTriggeringPolicy 
+08:14:15,118 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@374b25f7 - is deprecated. Please use SizeAndTimeBasedRollingPolicy instead.
+08:14:15,118 |-WARN in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@374b25f7 - For more information see https://logback.qos.ch/manual/appenders.html#SizeAndTimeBasedRollingPolicy
+08:14:15,119 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[E2E_AGENT_OTLP_TRACES] - Active log file name: ./logs/e2eagentOtlpTraces.log
+08:14:15,119 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.rolling.RollingFileAppender[E2E_AGENT_OTLP_TRACES] - File property is set to [./logs/e2eagentOtlpTraces.log]
+08:14:15,119 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [e2eAgentSummary] to WARN
+08:14:15,123 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [e2eAgentSummary] to false
+08:14:15,123 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [AGENT_SUMMARY] to Logger[e2eAgentSummary]
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [e2eAgentSegments] to WARN
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [e2eAgentSegments] to false
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [E2E_AGENT_TRACES] to Logger[e2eAgentSegments]
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [e2eagentFailedSegments] to DEBUG
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [e2eagentFailedSegments] to false
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [E2E_AGENT_FAILED_SEGMENTS] to Logger[e2eagentFailedSegments]
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [e2eagentOtlpTraces] to INFO
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [e2eagentOtlpTraces] to false
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [E2E_AGENT_OTLP_TRACES] to Logger[e2eagentOtlpTraces]
+08:14:15,124 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.core.model.processor.DefaultProcessor@33ec0ea7 - End of configuration.
+08:14:15,125 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.joran.JoranConfigurator@6525eac1 - Registering current configuration as safe fallback point
+08:14:15,132 |-INFO in org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.util.ContextInitializer@5f082a9d - org.apache.skywalking.apm.dependencies.ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 327 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+2026-09-02 08:14:17 GMT [ISS.0028.0016I] Configuration variables template file found at /opt/webmethods/IntegrationServer/bin/../application.properties will be used for processing.
+Sep 02, 2026 8:14:17 AM com.webmethods.sc.security.passman.impl.masterpw.FileMasterPassword loadObjects
+WARNING: loadObjects(config/ae256mpwd.dat) threw this: type(com.webmethods.sc.security.passman.masterpw.MasterPasswordException), msg(Retrieved null/empty master file: config/ae256mpwd.dat)
+Sep 02, 2026 8:14:17 AM com.webmethods.sc.security.passman.impl.masterpw.FileMasterPassword loadObjects
+WARNING: loadObjects(config/ae256mpwd.dat.bak) threw this: type(com.webmethods.sc.security.passman.masterpw.MasterPasswordException), msg(Retrieved null/empty master file: config/ae256mpwd.dat.bak)
+Sep 02, 2026 8:14:17 AM com.webmethods.sc.security.passman.impl.PassMan initMasterLastChangedDate
+WARNING: Found invalid last-changed date, null, using default
+Sep 02, 2026 8:14:17 AM com.webmethods.sc.security.passman.impl.PassMan initMasterExpireInterval
+WARNING: Found invalid expire interval, null, using default
+2026-09-02T08:14:17.507433776 [ISS.178.0108I] Edge register call is sending edgeIdentifier : 04edfb919276.
+2026-09-02T08:14:17.507754975 [ISS.178.9999I] Additionally sending version=12.0.6.0, build=1121, patches=[]
+2026-09-02T08:14:18.809278421 [ISS.178.0076W] License Key is not available for the Tenant.
+2026-09-02 08:14:19 GMT [ISS.0028.0016I] Configuration variables template file found at /opt/webmethods/IntegrationServer/bin/../application.properties will be used for processing.
+2026-09-02 08:14:19 GMT [ISS.0028.9999I] Processor found for the assetType settings
+2026-09-02 08:14:19 GMT [ISS.0028.9999I] Processing properties...
+2026-09-02 08:14:19 GMT [ISS.0028.9999I] {watt.server.classloader.enableRuntimeStaticJarLoading=true, watt.sap.inERT=true, watt.WmMQAdapter.Connection.CiphersList=AllCipherSpec, watt.server.audit.service.exclude=$wmservices, watt.server.http.request.supportCompression=true, watt.art.connection.byPassConnValidation=true, watt.server.audit.service.include=$toplevel,edge.*,project.*, watt.server.http.returnException=messageOnly, watt.server.serviceResults.cache.strict=true, watt.server.http.response.supportCompression=true, watt.server.serviceResults.returnDeclaredOutputOnly=true, watt.WmMQAdapter.SSL.Support=true}
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: . New value: true. Configuration variable key: watt.server.classloader.enableRuntimeStaticJarLoading.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: verbose. New value: messageOnly. Configuration variable key: watt.server.http.returnException.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: . New value: true. Configuration variable key: watt.sap.inERT.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: . New value: AllCipherSpec. Configuration variable key: watt.WmMQAdapter.Connection.CiphersList.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: false. New value: true. Configuration variable key: watt.server.http.request.supportCompression.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: . New value: $wmservices. Configuration variable key: watt.server.audit.service.exclude.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: false. New value: true. Configuration variable key: watt.server.serviceResults.returnDeclaredOutputOnly.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: false. New value: true. Configuration variable key: watt.server.serviceResults.cache.strict.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: . New value: true. Configuration variable key: watt.art.connection.byPassConnValidation.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: . New value: $toplevel,edge.*,project.*. Configuration variable key: watt.server.audit.service.include.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: false. New value: true. Configuration variable key: watt.server.http.response.supportCompression.
+2026-09-02 08:14:19 GMT [ISS.0028.0007I] Changed property in /opt/webmethods/IntegrationServer/bin/../config/server.cnf. Old value: . New value: true. Configuration variable key: watt.WmMQAdapter.SSL.Support.
+2026-09-02 08:14:19 GMT [ISS.0028.0122I] Configuration Variables are encrypted using IS_DEFAULT_ENCRYPTION_KEY.
+2026-09-02 08:14:19 GMT [ISS.0028.0024I] Changed password for user Administrator.
+2026-09-02T08:14:19.789682005 [ISS.178.0179I] Successfully updated the password for user Administrator in the pairing call.
+2026-09-02T08:14:19.821406110 [ISS.178.0106I] Edge instance registration is successful. Agent ID is 7ef1802d0fa8439fac53507061b3322c; Instance ID is c7c9e1b17dcf.
+2026-09-02T08:14:19.826788351 [ISS.178.9999I] EdgeRuntime pinger is attempting to send status Provisioning
+2026-09-02T08:14:20.275853571 [ISS.178.9999I] EdgeRuntime pinger successfully sent status Provisioning
+2026-09-02T08:14:20.276204603 [ISS.178.9999I] EdgeRuntime pinger thread started.
+2026-09-02T08:14:20.276413449 [ISS.178.9999I] EdgeRuntime pinger is attempting to send status Provisioning
+2026-09-02T08:14:20.530467442 [ISS.178.9999I] EdgeRuntime pinger successfully sent status Provisioning
+2026-09-02T08:14:23.411970648 [ISS.178.9999I] EdgeController: Refreshing packages : []
+2026-09-02T08:14:23.412226397 [ISS.178.9999I] EdgeController : No packages to sync. Skipping call to CTP for repository details.
+2026-09-02T08:14:24.402735685 [ISS.178.0095E] Failed to retrieve License for agentId 7ef1802d0fa8439fac53507061b3322c with url https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com. Details: Server returned HTTP response code: 401 for URL: https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com/integration/rest/internal/edge/agent/license.
+2026-09-02T08:14:24.403190178 [ISS.178.0076W] License Key is not available for the Tenant.
+2026-09-02T08:14:24.404080525 [ISS.178.9999I] Agent License will be refreshed every 24hours
+2026-09-02 08:14:24 GMT [ISS.0028.0016I] Configuration variables template file found at /opt/webmethods/IntegrationServer/bin/../application.properties will be used for processing.
+2026-09-02 08:14:24 GMT [ISS.0028.9999I] Validating License file for Microservices
+2026-09-02 08:14:24 GMT [ISS.0028.0016I] Configuration variables template file found at /opt/webmethods/IntegrationServer/bin/../application.properties will be used for processing.
+2026-09-02 08:14:24 GMT [ISS.0028.9999I] Processor found for the assetType settings
+2026-09-02 08:14:24 GMT [ISS.0028.9999I] Processing properties...
+2026-09-02 08:14:24 GMT [ISS.0028.9999I] {watt.server.classloader.enableRuntimeStaticJarLoading=true, watt.sap.inERT=true, watt.WmMQAdapter.Connection.CiphersList=AllCipherSpec, watt.server.audit.service.exclude=$wmservices, watt.server.http.request.supportCompression=true, watt.art.connection.byPassConnValidation=true, watt.server.audit.service.include=$toplevel,edge.*,project.*, watt.server.http.returnException=messageOnly, watt.server.serviceResults.cache.strict=true, watt.server.http.response.supportCompression=true, watt.server.serviceResults.returnDeclaredOutputOnly=true, watt.WmMQAdapter.SSL.Support=true}
+ESAPI: WARNING: System property [org.owasp.esapi.opsteam] is not set
+ESAPI: WARNING: System property [org.owasp.esapi.devteam] is not set
+ESAPI: Failed to read Log Prefix configuration Logger.LogPrefix. Defaulting to enabled. Caught org.owasp.esapi.errors.ConfigurationException; exception message was: org.owasp.esapi.errors.ConfigurationException: SecurityConfiguration for Logger.LogPrefix not found in ESAPI.properties
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0025.0001I] (tid=36) Integration Server 12.1.0.0 Build 1121 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0108I] (tid=36) Edge register call is sending edgeIdentifier : 04edfb919276. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Additionally sending version=12.0.6.0, build=1121, patches=[] 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0076W] (tid=36) License Key is not available for the Tenant. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0179I] (tid=36) Successfully updated the password for user Administrator in the pairing call. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0106I] (tid=36) Edge instance registration is successful. Agent ID is 7ef1802d0fa8439fac53507061b3322c; Instance ID is c7c9e1b17dcf. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) EdgeRuntime pinger is attempting to send status Provisioning 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) EdgeRuntime pinger successfully sent status Provisioning 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) EdgeRuntime pinger thread started. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) EdgeRuntime pinger is attempting to send status Provisioning 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) EdgeRuntime pinger successfully sent status Provisioning 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent obtaining default agent manifest (s): 3 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent obtaining edge agent manifest (s): 0 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0151I] (tid=36) Destination binary file for the store already exists at ../common/conf/keystore.jks. Attempting overwrite. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0151I] (tid=36) Destination binary file for the store already exists at ../common/conf/platform_truststore.jks. Attempting overwrite. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) EdgeController: Refreshing packages : [] 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) EdgeController : No packages to sync. Skipping call to CTP for repository details. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent collecting package names from config (s): 0 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent collecting old package names from config (s): 0 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent processing packages (s): 0 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent processing manifest (s): 0 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent resolving environment variables (s): 0 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent saving manifest and configuration variables (s): 0 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Time spent refreshing edge server (s): 4 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0095E] (tid=36) Failed to retrieve License for agentId 7ef1802d0fa8439fac53507061b3322c with url https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com. Details: Server returned HTTP response code: 401 for URL: https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com/integration/rest/internal/edge/agent/license. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.0076W] (tid=36) License Key is not available for the Tenant. 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0178.9999I] (tid=36) Agent License will be refreshed every 24hours 
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0025.0006I] (tid=36) License Manager started 
+08:14:24,617 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    The given SAG installation root: '../..' with absolute path '/opt' is not a valid one. Searching its parents for install folder    
+08:14:24,618 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    Checking if the path '/opt/webmethods/IntegrationServer' is a valid SAG installation root     
+08:14:24,618 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    Checking if the path '/opt/webmethods' is a valid SAG installation root     
+08:14:24,618 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    Found a valid SAG installation root in directory with path '/opt/webmethods'    
+08:14:24,619 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+08:14:24,621 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+08:14:24,623 - 2026.09.02    [com.w.m.a.i.UsageMeasurementImpl             ]    CONFIG    Metering agent version: 13.0.0.0000-0185    
+08:14:24,624 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    The given SAG installation root: '../..' with absolute path '/opt' is not a valid one. Searching its parents for install folder    
+08:14:24,624 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    Checking if the path '/opt/webmethods/IntegrationServer' is a valid SAG installation root     
+08:14:24,624 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    Checking if the path '/opt/webmethods' is a valid SAG installation root     
+08:14:24,624 - 2026.09.02    [com.w.m.a.i.c.SAGInstallationConfiguration   ]    CONFIG    Found a valid SAG installation root in directory with path '/opt/webmethods'    
+08:14:24,632 - 2026.09.02    [com.w.m.a.i.UsageMeasurementImpl             ]    CONFIG    [Configuration] : {
+server url: https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements
+proxy: DIRECT
+proxy user: null
+proxy pass: 
+serverConnectTimeout: 60000
+serverReadTimeout: 60000
+serverWriteChunkSize: 8192
+accPeriod: 1800
+reportPeriod: 3600
+storage: /opt/webmethods/common/metering/storage
+userProvidedTrustStore: null
+sagRootFile: /opt/webmethods
+logLevel: WARN
+instanceIdentifier: 04edfb919276_/opt/webmethods/IntegrationServer
+maxLogSize: 1000000
+cloudID: null
+runtimeAlias: EdgeRuntime_sannrmftruntime
+}
+Origin of retrieved properties:
+The value for 'CLOUD_ID' is taken from: default value
+The value for 'javax.net.ssl.trustStore' is taken from: default value
+The value for 'metering.proxy.type' is taken from: default value
+The value for 'metering.report.period' is taken from: properties file
+The value for 'metering.server.connect.timeout' is taken from: default value
+The value for 'metering.max.measurementlog.size' is taken from: default value
+The value for 'metering.runtime.alias' is taken from: environment variable
+The value for 'metering.accumulation.period' is taken from: properties file
+The value for 'metering.truststore.file' is taken from: default value
+The value for 'metering.server.write.chunk.size' is taken from: default value
+The value for 'metering.server.url' is taken from: properties file
+The value for 'metering.log.level' is taken from: default value
+    
+08:14:24,633 - 2026.09.02    [com.w.m.a.i.UsageMeasurementImpl             ]    CONFIG    Initializing usage measurement for product 'PIE', for client '20250625-1754-0451-6085-6d68caf35c29' with runtime UID '1778782802', license serial number 'dev1878880_99427260001883730821-1776234432905' and runtime alias: EdgeRuntime_sannrmftruntime    
+08:14:24,633 - 2026.09.02    [com.w.m.a.i.UsageMeasurementImpl             ]    WARN    For ensuring uniqueness in the generated runtime ids the hosts names of the servers should be unique.    
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0014.0071I] (tid=36) Transaction Metering enabled. 
+08:14:24,661 - 2026.09.02    [com.w.m.a.i.UsageMeasurementImpl             ]    CONFIG    Scheduling reporting of '0' additional logs    
+ISSERVER|| 2026-09-02 08:14:24 GMT [ISS.0096.0052I] (tid=36) JDBCConnectionManager: Password manager initialized successfully 
+ISSERVER|| 2026-09-02 08:14:26 GMT [ISS.0096.9999I] (tid=36) Performing Embedded Derby CREATE for ISInternal 
+-------------------------------------------------------
+  database type  : derby
+  database URL   : jdbc:derby:embedded;create=true
+  version        : latest
+-------------------------------------------------------
+  component      : Tracking
+  installed      : no
+  action         : create
+  component      : ComponentTracker
+  version        : latest
+  scripts        : 5 total
+    script       : 1
+    file         : /opt/webmethods/common/db/DCC/ComponentTracker/scripts/8.0/derby/create.sql
+    status       : executing
+
+    script       : 2
+    level        : v8.0
+    status       : executing
+
+    script       : 3
+    file         : /opt/webmethods/common/db/DCC/ComponentTracker/scripts/8.0-10.4/derby/migrate.sql
+    status       : executing
+
+    script       : 4
+    level        : v8.0-10.4
+    status       : executing
+
+    script       : 5
+    level        : v10.4
+    status       : executing
+
+  status         : complete
+-------------------------------------------------------
+  component      : ISInternal
+  installed      : no
+  action         : create
+  component      : ISInternal
+  version        : latest
+  scripts        : 111 total
+    script       : 1
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.0.1/derby/create.sql
+    status       : executing
+
+    script       : 2
+    level        : v9.0.1
+    status       : executing
+
+    script       : 3
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.0.1-9.0.1.fix1/derby/migrate.sql
+    status       : executing
+
+    script       : 4
+    level        : v9.0.1-9.0.1.fix1
+    status       : executing
+
+    script       : 5
+    level        : v9.0.1.fix1
+    status       : executing
+
+    script       : 6
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.0.1.fix1-9.0.1.fix2/derby/migrate.sql
+    status       : executing
+
+    script       : 7
+    level        : v9.0.1.fix1-9.0.1.fix2
+    status       : executing
+
+    script       : 8
+    level        : v9.0.1.fix2
+    status       : executing
+
+    script       : 9
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.0.1.fix2-9.5.1.fix2/derby/migrate_1.sql
+    status       : executing
+
+    script       : 10
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.0.1.fix2-9.5.1.fix2/derby/migrate_2.sql
+    status       : executing
+
+    script       : 11
+    level        : v9.0.1.fix2-9.5.1.fix2
+    status       : executing
+
+    script       : 12
+    level        : v9.5.1.fix2
+    status       : executing
+
+    script       : 13
+    level        : v9.5.1.fix2-9.8
+    status       : executing
+
+    script       : 14
+    level        : v9.8
+    status       : executing
+
+    script       : 15
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.8-9.9.fix1/derby/migrate.sql
+    status       : executing
+
+    script       : 16
+    level        : v9.8-9.9.fix1
+    status       : executing
+
+    script       : 17
+    level        : v9.9.fix1
+    status       : executing
+
+    script       : 18
+    level        : v9.9.fix1-9.10
+    status       : executing
+
+    script       : 19
+    level        : v9.10
+    status       : executing
+
+    script       : 20
+    level        : v9.10-9.10.fix1
+    status       : executing
+
+    script       : 21
+    level        : v9.10.fix1
+    status       : executing
+
+    script       : 22
+    level        : v9.10.fix1-9.10.fix2
+    status       : executing
+
+    script       : 23
+    level        : v9.10.fix2
+    status       : executing
+
+    script       : 24
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.10.fix2-9.12/derby/migrate_1.sql
+    status       : executing
+
+    script       : 25
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.10.fix2-9.12/derby/migrate_2.sql
+    status       : executing
+
+    script       : 26
+    level        : v9.10.fix2-9.12
+    status       : executing
+
+    script       : 27
+    level        : v9.12
+    status       : executing
+
+    script       : 28
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.12-9.12.fix1/derby/migrate.sql
+    status       : executing
+
+    script       : 29
+    level        : v9.12-9.12.fix1
+    status       : executing
+
+    script       : 30
+    level        : v9.12.fix1
+    status       : executing
+
+    script       : 31
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/9.12.fix1-10.1/derby/migrate.sql
+    status       : executing
+
+    script       : 32
+    level        : v9.12.fix1-10.1
+    status       : executing
+
+    script       : 33
+    level        : v10.1
+    status       : executing
+
+    script       : 34
+    level        : v10.1-10.1.fix1
+    status       : executing
+
+    script       : 35
+    level        : v10.1.fix1
+    status       : executing
+
+    script       : 36
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.1.fix1-10.1.fix2/derby/migrate.sql
+    status       : executing
+
+    script       : 37
+    level        : v10.1.fix1-10.1.fix2
+    status       : executing
+
+    script       : 38
+    level        : v10.1.fix2
+    status       : executing
+
+    script       : 39
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.1.fix2-10.1.fix3/derby/migrate.sql
+    status       : executing
+
+    script       : 40
+    level        : v10.1.fix2-10.1.fix3
+    status       : executing
+
+    script       : 41
+    level        : v10.1.fix3
+    status       : executing
+
+    script       : 42
+    level        : v10.1.fix3-10.1.fix4
+    status       : executing
+
+    script       : 43
+    level        : v10.1.fix4
+    status       : executing
+
+    script       : 44
+    level        : v10.1.fix4-10.2
+    status       : executing
+
+    script       : 45
+    level        : v10.2
+    status       : executing
+
+    script       : 46
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.2-10.3/derby/migrate.sql
+    status       : executing
+
+    script       : 47
+    level        : v10.2-10.3
+    status       : executing
+
+    script       : 48
+    level        : v10.3
+    status       : executing
+
+    script       : 49
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.3-10.3.fix1/derby/migrate.sql
+    status       : executing
+
+    script       : 50
+    level        : v10.3-10.3.fix1
+    status       : executing
+
+    script       : 51
+    level        : v10.3.fix1
+    status       : executing
+
+    script       : 52
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.3.fix1-10.3.fix2/derby/migrate.sql
+    status       : executing
+
+    script       : 53
+    level        : v10.3.fix1-10.3.fix2
+    status       : executing
+
+    script       : 54
+    level        : v10.3.fix2
+    status       : executing
+
+    script       : 55
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.3.fix2-10.5/derby/migrate.sql
+    status       : executing
+
+    script       : 56
+    level        : v10.3.fix2-10.5
+    status       : executing
+
+    script       : 57
+    level        : v10.5
+    status       : executing
+
+    script       : 58
+    level        : v10.5-10.5.fix1
+    status       : executing
+
+    script       : 59
+    level        : v10.5.fix1
+    status       : executing
+
+    script       : 60
+    level        : v10.5.fix1-10.5.fix3
+    status       : executing
+
+    script       : 61
+    level        : v10.5.fix3
+    status       : executing
+
+    script       : 62
+    level        : v10.5.fix3-10.5.fix4
+    status       : executing
+
+    script       : 63
+    level        : v10.5.fix4
+    status       : executing
+
+    script       : 64
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.5.fix4-10.7/derby/migrate.sql
+    status       : executing
+
+    script       : 65
+    level        : v10.5.fix4-10.7
+    status       : executing
+
+    script       : 66
+    level        : v10.7
+    status       : executing
+
+    script       : 67
+    level        : v10.7-10.7.fix1
+    status       : executing
+
+    script       : 68
+    level        : v10.7.fix1
+    status       : executing
+
+    script       : 69
+    level        : v10.7.fix1-10.7.fix2
+    status       : executing
+
+    script       : 70
+    level        : v10.7.fix2
+    status       : executing
+
+    script       : 71
+    level        : v10.7.fix2-10.11
+    status       : executing
+
+    script       : 72
+    level        : v10.11
+    status       : executing
+
+    script       : 73
+    level        : v10.11-10.11.fix1
+    status       : executing
+
+    script       : 74
+    level        : v10.11.fix1
+    status       : executing
+
+    script       : 75
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.11.fix1-10.11.fix2/derby/migrate.sql
+    status       : executing
+
+    script       : 76
+    level        : v10.11.fix1-10.11.fix2
+    status       : executing
+
+    script       : 77
+    level        : v10.11.fix2
+    status       : executing
+
+    script       : 78
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.11.fix2-10.11.fix3/derby/migrate.sql
+    status       : executing
+
+    script       : 79
+    level        : v10.11.fix2-10.11.fix3
+    status       : executing
+
+    script       : 80
+    level        : v10.11.fix3
+    status       : executing
+
+    script       : 81
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.11.fix3-10.11.fix4/derby/migrate.sql
+    status       : executing
+
+    script       : 82
+    level        : v10.11.fix3-10.11.fix4
+    status       : executing
+
+    script       : 83
+    level        : v10.11.fix4
+    status       : executing
+
+    script       : 84
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.11.fix4-10.15/derby/migrate.sql
+    status       : executing
+
+    script       : 85
+    level        : v10.11.fix4-10.15
+    status       : executing
+
+    script       : 86
+    level        : v10.15
+    status       : executing
+
+    script       : 87
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.15-10.15.fix1/derby/migrate.sql
+    status       : executing
+
+    script       : 88
+    level        : v10.15-10.15.fix1
+    status       : executing
+
+    script       : 89
+    level        : v10.15.fix1
+    status       : executing
+
+    script       : 90
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.15.fix1-10.15.fix2/derby/migrate.sql
+    status       : executing
+
+    script       : 91
+    level        : v10.15.fix1-10.15.fix2
+    status       : executing
+
+    script       : 92
+    level        : v10.15.fix2
+    status       : executing
+
+    script       : 93
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.15.fix2-10.15.fix4/derby/migrate.sql
+    status       : executing
+
+    script       : 94
+    level        : v10.15.fix2-10.15.fix4
+    status       : executing
+
+    script       : 95
+    level        : v10.15.fix4
+    status       : executing
+
+    script       : 96
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.15.fix4-10.15.fix5/derby/migrate.sql
+    status       : executing
+
+    script       : 97
+    level        : v10.15.fix4-10.15.fix5
+    status       : executing
+
+    script       : 98
+    level        : v10.15.fix5
+    status       : executing
+
+    script       : 99
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/10.15.fix5-10.15.fix6/derby/migrate.sql
+    status       : executing
+
+    script       : 100
+    level        : v10.15.fix5-10.15.fix6
+    status       : executing
+
+    script       : 101
+    level        : v10.15.fix6
+    status       : executing
+
+    script       : 102
+    level        : v10.15.fix6-11.1
+    status       : executing
+
+    script       : 103
+    level        : v11.1
+    status       : executing
+
+    script       : 104
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/11.1-11.1.fix1/derby/migrate.sql
+    status       : executing
+
+    script       : 105
+    level        : v11.1-11.1.fix1
+    status       : executing
+
+    script       : 106
+    level        : v11.1.fix1
+    status       : executing
+
+    script       : 107
+    level        : v11.1.fix1-12.1
+    status       : executing
+
+    script       : 108
+    level        : v12.1
+    status       : executing
+
+    script       : 109
+    file         : /opt/webmethods/common/db/IntegrationServer/ISInternal/scripts/12.1-12.1.fix1/derby/migrate.sql
+    status       : executing
+
+    script       : 110
+    level        : v12.1-12.1.fix1
+    status       : executing
+
+    script       : 111
+    level        : v12.1.fix1
+    status       : executing
+
+  status         : complete
+-------------------------------------------------------
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0096.9999I] (tid=36) Performing Embedded Derby CREATE for CrossReference 
+-------------------------------------------------------
+  database type  : derby
+  database URL   : jdbc:derby:embedded;create=true
+  version        : latest
+-------------------------------------------------------
+  component      : CrossReference
+  installed      : no
+  action         : create
+  component      : CrossReference
+  version        : latest
+  scripts        : 2 total
+    script       : 1
+    file         : /opt/webmethods/common/db/IntegrationServer/CrossReference/scripts/8.2.2/derby/create.sql
+    status       : executing
+
+    script       : 2
+    level        : v8.2.2
+    status       : executing
+
+  status         : complete
+-------------------------------------------------------
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0096.0002I] (tid=36) JDBCConnectionManager: creating Embedded Pool Alias for Xref. 
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0096.0002I] (tid=36) JDBCConnectionManager: creating Embedded Pool Alias for ISDashboardStats. 
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0096.0002I] (tid=36) JDBCConnectionManager: creating Embedded Pool Alias for ISInternal. 
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0096.0003I] (tid=36) JDBCConnectionManager: creating database object for embedded database: IS_OAUTH_CLIENTS.REQUIRE_PKCE 
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0025.0024I] (tid=36) JDBC Connection Manager started 
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0095.0026W] (tid=36) The AuditConfig.xml file was not found and is being created. The audit logging system is using default settings. 
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0095.0025W] (tid=36) The auditing.cnf file was not found and is being created. 
+ISSERVER|| 2026-09-02 08:14:29 GMT [ISS.0095.0025W] (tid=36) The transient.sql.errors.xml file was not found and is being created. 
+Sep 02, 2026 8:14:29 AM com.webmethods.sc.config.ConfigurationLogger log
+INFO: Out-of-band file changes will not be monitored
+ISSERVER|| 2026-09-02 08:14:31 GMT [ISS.0095.0013I] (tid=36) Audit Logging initialized. 
+ISSERVER|| 2026-09-02 08:14:31 GMT [ISS.0033.0168I] (tid=36) Cluster Node Name: 04edfb919276. 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0025.0021I] (tid=36) ACL Manager started 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0025.0008I] (tid=36) State Manager started 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0025.0010I] (tid=36) Service Manager started 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0025.0020I] (tid=36) Validation Processor started 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0025.0022I] (tid=36) Statistics Processor started 
+Registered custom signal handler for thread dumper. (kill -USR1 16)
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISP.0090.0004I] (tid=36) PayloadPersistenceProcessor initialized - featureEnabled: true, restartMode: off, using PersistenceServiceFactory for persistence service creation -- {1} 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0025.0018I] (tid=36) Invoke Manager started 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0025.0012I] (tid=36) Cache Manager started 
+ISSERVER|| 2026-09-02 08:14:35 GMT [ISS.0098.0121I] (tid=36) The default Broker was not detected while initializing the dispatch.cnf file. Broker Settings will automatically be disabled. 
+ISSERVER|| 2026-09-02 08:14:38 GMT [ISS.0098.0026I] (tid=36) Document Store DefaultStore initialized 
+ISSERVER|| 2026-09-02 08:14:40 GMT [ISS.0098.0026I] (tid=36) Document Store VolatileTriggerStore initialized 
+ISSERVER|| 2026-09-02 08:14:40 GMT [ISS.0098.0026I] (tid=36) Document Store TriggerStore initialized 
+ISSERVER|| 2026-09-02 08:14:42 GMT [ISS.0098.0026I] (tid=36) Document Store ResubmitStore initialized 
+[Wed Sep 02 08:14:42.194 GMT 2026] [webMethods Integration Server] Setting log level to ERROR
+--------- Log File Closed ---------
+
+
+ISSERVER|| 2026-09-02 08:14:42 GMT [ISS.0153.0010I] (tid=36) webMethods Messaging subsystem is not configured. The default webMethods Messaging connection aliases are being created. 
+ISSERVER|| 2026-09-02 08:14:42 GMT [ISS.0134.0998I] (tid=36) [STARTUP.UM_DETECTOR] no realm found in install directory: /opt/webmethods/UniversalMessaging/server 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0153.0000I] (tid=36) webMethods Messaging subsystem started 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0014.0044I] (tid=36) Cron Daemon Pool thread pool increased by 10 threads, current maximum is 15. 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0106.0001I] (tid=36) Join Manager initialized 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0025.0032I] (tid=36) Dispatcher initialized 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0134.0128I] (tid=36) JMS subsystem is starting. 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0134.0010I] (tid=36) JMS subsystem is not configured. The default JMS connection alias is being created. 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0135.0003I] (tid=36) JNDIConfigurationManager added new JNDI Properties file "DEFAULT_IS_JNDI_PROVIDER" [{is.jndiAlias.description=system generated JNDI provider alias, java.naming.factory.initial=com.pcbsys.nirvana.nSpace.NirvanaContextFactory, java.naming.provider.url=nsp://localhost:9000}] for user null. 
+ISSERVER|| 2026-09-02 08:14:43 GMT [ISS.0134.0998I] (tid=36) DEFAULT_IS_JMS_CONNECTION cache enabled :: true 
+ISSERVER|| 2026-09-02 08:14:44 GMT [ISS.0134.0000I] (tid=36) JMS subsystem started 
+ISSERVER|| 2026-09-02 08:14:44 GMT [ISS.0134.0998I] (tid=36) PE_NONTRANSACTIONAL_ALIAS cache enabled :: true 
+ISSERVER|| 2026-09-02 08:14:44 GMT [ISS.0173.0000I] (tid=36) Common Messaging subsystem started 
+ISSERVER|| 2026-09-02 08:14:44 GMT [ISC.0185.9999I] (tid=36) SchemaRegistryManager initialized 
+ISSERVER|| 2026-09-02 08:14:44 GMT [ISS.0179.0998I] (tid=36) Streaming subsystem is starting up 
+ISSERVER|| 2026-09-02 08:14:44 GMT [ISS.0179.0000I] (tid=36) Streaming subsystem started 
+ISSERVER|| 2026-09-02 08:14:44 GMT [SCC.0121.0093I] (tid=36) XA Recovery Store initialized 
+ISSERVER|| 2026-09-02 08:14:44 GMT [ISS.0025.0055I] (tid=36) Lock Manager initialized 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0158.0000I] (tid=36) OData Server module is initialized. 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0048.9999I] (tid=36) Successfully initialized module "odata-server" by com.webmethods.is.odata.core.Init 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0048.9999I] (tid=36) Successfully initialized module "websocket-server" by com.webmethods.is.websocket.server.Init 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0048.9999I] (tid=36) Successfully initialized module "graphql-server" by com.webmethods.is.graphql.Init 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0174.0000I] (tid=36) Alerting framework initialized. 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0048.9999I] (tid=36) Successfully initialized module "alert-framework" by com.webmethods.is.alert.notifier.Init 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0028.0085I] (tid=36) Package List Default , WmART , WmAdmin , WmCloud , WmPublic , WmRoot , WmCloudStreams , WmCloudStreamsAPI , WmEDI , WmFlatFile 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0025.0004I] (tid=36) Flow Service Manager started 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0025.0002I] (tid=36) Package Manager started 
+ISSERVER|| 2026-09-02 08:14:46 GMT [ISS.0025.0011I] (tid=36) Package Replicator Manager started 
+ISSERVER|| 2026-09-02 08:14:47 GMT [ISS.0028.0001I] (tid=36) Loading packages 
+ISSERVER|| 2026-09-02 08:14:47 GMT [ISS.0028.0005I] (tid=36) Loading WmRoot package 
+ISSERVER|| 2026-09-02 08:14:47 GMT [ISC.0077.0102I] (tid=36) The maximum value for IData.toString() method has been set to 65,536. 
+ISSERVER|| 2026-09-02 08:14:49 GMT [ISS.0028.0005I] (tid=36) Loading WmPublic package 
+ISSERVER|| 2026-09-02 08:14:50 GMT [ISS.0028.0005I] (tid=702) Loading WmCloudStreams package 
+ISSERVER|| 2026-09-02 08:14:50 GMT [ISS.0028.0005I] (tid=701) Loading WmCloud package 
+ISSERVER|| 2026-09-02 08:14:50 GMT [ISS.0028.0005I] (tid=699) Loading WmART package 
+ISSERVER|| 2026-09-02 08:14:50 GMT [ISS.0028.0005I] (tid=700) Loading WmAdmin package 
+ISSERVER|| 2026-09-02 08:14:50 GMT [ISS.0028.0005I] (tid=698) Loading WmFlatFile package 
+ISSERVER|| 2026-09-02 08:14:51 GMT [ISS.0028.0005I] (tid=702) Loading WmCloudStreamsAPI package 
+ISSERVER|| 2026-09-02 08:14:51 GMT [ISS.0028.0005I] (tid=699) Loading WmEDI package 
+ISSERVER|| 2026-09-02 08:14:59 GMT [ISS.0028.0005I] (tid=699) Loading Default package 
+ISSERVER|| 2026-09-02 08:15:01 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.event:startEventAgentPort) 
+ISSERVER|| 2026-09-02 08:15:01 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.net.email:init) 
+ISSERVER|| 2026-09-02 08:15:01 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.net.ftp:init) 
+ISSERVER|| 2026-09-02 08:15:01 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.net.ftps:init) 
+ISSERVER|| 2026-09-02 08:15:01 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.net.http:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.net.websocket:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0161.0008I] (tid=264) Server endpoint registered for URI : /echo 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.ns:syncToNamespace) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.remote:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISP.0061.0009I] (tid=264) The default Remote Server Alias was created. 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.registry:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.proxy:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.schedule:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0137.0000I] (tid=264) [SCHED] IS 12.1, scheduler version: 0 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0137.0000I] (tid=264) [SCHED] checking DB level 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0137.0000I] (tid=264) [SCHED] level: v12.1.fix1 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0137.0000I] (tid=264) [SCHED] number: 12001000001 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.dispatcher:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.tx:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISC.0063.0011I] (tid=264) Start 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.soap:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.tspace:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.ws:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.security.keystore:createDefaultKeyStoreTrustStoreAliases) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.proxy:createDefaultHttpsProxyServerAlias) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.ntlmclient:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.kerberossettings:init) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.admin:initHelpTopicURLMappings) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.sftpclient:updateCommonConfig) 
+ISSERVER|| 2026-09-02 08:15:02 GMT [ISS.0028.0012I] (tid=36) WmRoot: Startup service (wm.server.access:initAccountLocking) 
+ISSERVER|| 2026-09-02 08:15:03 GMT [ISS.0045.0215I] (tid=36) Default value for indexInterval has changed from 300 to 90. 
+ISSERVER|| 2026-09-02 08:15:03 GMT [ISS.0045.0156I] (tid=36) Statistics Data Collector enabled? true 
+JDBCPool> 2026-09-02 08:15:03.111 (tid=663576063) : *** ISAdmin -> updateFunctionalAlias - refreshedFailFastMode on function ISDashboardStats to false
+ISSERVER|| 2026-09-02 08:15:03 GMT [ISS.0045.0100I] (tid=36) IS Statistics Data Collector index is OPEN for updates.  Mode: CREATE_OR_APPEND 
+ISSERVER|| 2026-09-02 08:15:03 GMT [ISS.0028.0012I] (tid=36) WmPublic: Startup service (pub.storage:startup) 
+ISSERVER|| 2026-09-02 08:15:03 GMT [ISS.0028.0012I] (tid=36) WmPublic: Startup service (pub.vault:setup) 
+ISSERVER|| 2026-09-02 08:15:03 GMT [ISS.0182.9999I] (tid=264) VaultConnectionCache: Refreshing cache... 
+ISSERVER|| 2026-09-02 08:15:03 GMT [ISS.0028.0012I] (tid=36) WmCloudStreams: Startup service (cloudstreams.config:init) 
+ISSERVER|| 2026-09-02 08:15:09 GMT [ISS.0017.0080I] (tid=264) Migrated the webMethods-IS-CloudStreams.xml cache manager configuration to the Ehcache 2.8.x format. 
+ISSERVER|| 2026-09-02 08:15:10 GMT [CLS.0010.0002I] (tid=264) WS-Stack repository located at /opt/webmethods/IntegrationServer/bin/../config/wss/ 
+ISSERVER|| 2026-09-02 08:15:10 GMT [CLS.0010.0003I] (tid=264) WS-Stack configuration file located: /opt/webmethods/IntegrationServer/bin/../config/wss//axis2.xml 
+ISSERVER|| 2026-09-02 08:15:11 GMT [CLS.0050.0063I] (tid=264) Adding PGService:WmCloudStreams.RestVS to the SOAP Stack 
+ISSERVER|| 2026-09-02 08:15:11 GMT [CLS.0050.0063I] (tid=264) Adding PGService:WmCloudStreams.SoapVS to the SOAP Stack 
+ISSERVER|| 2026-09-02 08:15:11 GMT [CLS.0010.0175I] (tid=264) 
+ CloudStreams product is initialized. 
+ 
+
+ CloudStreams product is initialized. 
+
+ISSERVER|| 2026-09-02 08:15:12 GMT [CLS.0010.0045I] (tid=264) CloudStreams Spring context loaded. 
+ISSERVER|| 2026-09-02 08:15:12 GMT [CLS.0205.0021I] (tid=264) LifeCycleEventPublisher - startup method is called 
+ISSERVER|| 2026-09-02 08:15:12 GMT [CLS.0300.0139I] (tid=264) Going to initialize persistence manager 
+ISSERVER|| 2026-09-02 08:15:15 GMT [CLS.0103.0054I] (tid=264) CTP remote persistence provider initialized with base URL: https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com 
+ISSERVER|| 2026-09-02 08:15:15 GMT [CLS.0103.0054I] (tid=264) Persistence Provider Auto-Discovery Report:
+==========================================
+
+1. Explicit Configuration (wst.persistence.provider): NOT FOUND
+2. JDBC Pool Detection (via NotificationPersistenceUtil):
+   - Connection Pool: NOT AVAILABLE
+3. SAG IS Cloud Detection (SAG_IS_CLOUD_URL or SAG_IS_CLOUD_REGISTER_URL): FOUND - https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com [SELECTED]
+
+Final Provider: remote.ctp 
+ISSERVER|| 2026-09-02 08:15:15 GMT [CLS.0300.0139I] (tid=264) Persistence manager initialized with Provider for remote.ctp 
+ISSERVER|| 2026-09-02 08:15:15 GMT [ISS.0028.0012I] (tid=36) WmCloudStreams: Startup service (cloudstreams.UIConfig:initUI) 
+ISSERVER|| 2026-09-02 08:15:15 GMT [ISS.0028.0012I] (tid=36) WmCloudStreams: Startup service (wm.cloudstreams.admin:startup) 
+ISSERVER|| 2026-09-02 08:15:15 GMT [ISS.0028.0012I] (tid=36) WmCloud: Startup service (wm.client.integrationlive.admin:loadTenantAccountInfo) 
+ISSERVER|| 2026-09-02 08:15:15 GMT [ISP.0090.9999I] (tid=264) Unable to find message key '90.9999' in bundle 'com.wm.resources.WmPublicMsgBundle' 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9998E] (tid=264) Exception -> Exception loading tenant alias 'EdgeRuntime_sannrmftruntime'. Details: com.webmethods.is.integrationlive.IntegrationLiveException: webMethods Cloud service returned the following error: 400 {"integration":{"message":{"code":-1,"description":"An error occurred while processing your request. Contact support."}}}. Contact the webMethods Cloud Administrator to resolve the issue.
+        at com.webmethods.is.integrationlive.RESTServicesHandler.invokeRemoteService(RESTServicesHandler.java:505)
+        at com.webmethods.is.integrationlive.RESTServicesHandler.invokeRemoteService(RESTServicesHandler.java:343)
+        at com.webmethods.is.integrationlive.RESTServicesHandler.getTenantInformation(RESTServicesHandler.java:143)
+        at com.webmethods.is.integrationlive.account.IntegrationLiveAccounts.loadRemoteCloudInstance(IntegrationLiveAccounts.java:598)
+        at com.webmethods.is.integrationlive.account.IntegrationLiveAccounts.loadAccountInfoFromIntegrationLive(IntegrationLiveAccounts.java:539)
+        at com.webmethods.is.integrationlive.account.IntegrationLiveAccounts.loadTenantAccountInfo(IntegrationLiveAccounts.java:798)
+        at wm.client.integrationlive.admin.loadTenantAccountInfo(admin.java:71)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:586)
+        at com.wm.app.b2b.server.JavaService.baseInvoke(JavaService.java:417)
+        at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:915)
+        at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+        at com.wm.app.b2b.server.invoke.PayloadPersistenceProcessor.process(PayloadPersistenceProcessor.java:121)
+        at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:77)
+        at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:283)
+        at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:51)
+        at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+        at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:374)
+        at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+        at com.wm.app.b2b.server.invoke.ConcurrentRequestLimitProcessor.process(ConcurrentRequestLimitProcessor.java:62)
+        at com.wm.app.b2b.server.AuditLogManager.process$original$Ejkvnh0S(AuditLogManager.java:440)
+        at com.wm.app.b2b.server.AuditLogManager.process$original$Ejkvnh0S$accessor$ijPIITh8(AuditLogManager.java)
+        at com.wm.app.b2b.server.AuditLogManager$auxiliary$qng9qaBv.call(Unknown Source)
+        at org.apache.skywalking.apm.agent.core.plugin.interceptor.enhance.InstMethodsInter.intercept(InstMethodsInter.java:95)
+        at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:736)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:463)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:421)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:261)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:117)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:76)
+        at com.wm.app.b2b.server.SessionInvoke.run(SessionInvoke.java:37)
+        at com.wm.util.pool.PooledThread.run(PooledThread.java:127)
+        at java.base/java.lang.Thread.run(Thread.java:1600)
+ 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999I] (tid=264) Initializing Hybrid Invoke Common (hybrid.version.2.0.2) 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999I] (tid=264) Starting the Hybrid Invoke Module associated with connection EdgeRuntime_sannrmftruntime/EdgeRuntimeAccount_sannrmftruntime_admin@stage00 in the Hybrid Invoke ServiceProcessor for URL: undefined 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999I] (tid=264) [HYBRID-MOD] UniversalMessagingProcessor_1_Producer: session manager attempting to start 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999W] (tid=264) [HYBRID-MOD] UniversalMessagingProcessor_1_Producer: creating new session pool for  
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999I] (tid=264) [HYBRID-MOD] UniversalMessagingProcessor_1_Producer: session pool starting for URL  
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999E] (tid=264) [HYBRID-MOD] UniversalMessagingProcessor_1_Producer: Failed to create session: com.pcbsys.nirvana.client.nIllegalArgumentException: Invalid url supplied : <null> 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999E] (tid=264) [HYBRID-MOD] UniversalMessagingProcessor_1_Producer: creating new session pool failed for : com.pcbsys.nirvana.client.nIllegalArgumentException: Invalid url supplied : <null> 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.9999I] (tid=264) [HYBRID-UPDATE] Replacing connection. key(EdgeRuntime_sannrmftruntime/EdgeRuntimeAccount_sannrmftruntime_admin@stage00) 
+com.wm.app.b2b.server.ServiceException: java.lang.RuntimeException: com.pcbsys.nirvana.client.nIllegalArgumentException: Invalid url supplied : <null>
+        at com.webmethods.is.integrationlive.connector.client.um.ListenersManager.enableListener(ListenersManager.java:129)
+        at wm.client.integrationlive.connector.enableConnector(connector.java:40)
+        at wm.client.integrationlive.connections.createUMConnection(connections.java:327)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:586)
+        at com.wm.app.b2b.server.JavaService.baseInvoke(JavaService.java:417)
+        at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:915)
+        at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+        at com.wm.app.b2b.server.invoke.PayloadPersistenceProcessor.process(PayloadPersistenceProcessor.java:121)
+        at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:77)
+        at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:283)
+        at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:51)
+        at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+        at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:374)
+        at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+        at com.wm.app.b2b.server.invoke.ConcurrentRequestLimitProcessor.process(ConcurrentRequestLimitProcessor.java:62)
+        at com.wm.app.b2b.server.AuditLogManager.process$original$Ejkvnh0S(AuditLogManager.java:440)
+        at com.wm.app.b2b.server.AuditLogManager.process$original$Ejkvnh0S$accessor$ijPIITh8(AuditLogManager.java)
+        at com.wm.app.b2b.server.AuditLogManager$auxiliary$qng9qaBv.call(Unknown Source)
+        at org.apache.skywalking.apm.agent.core.plugin.interceptor.enhance.InstMethodsInter.intercept(InstMethodsInter.java:95)
+        at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:736)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:463)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:421)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:261)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:89)
+        at com.wm.app.b2b.server.Service.doInvoke(Service.java:721)
+        at com.wm.app.b2b.server.Service.doInvoke(Service.java:615)
+        at com.webmethods.is.integrationlive.account.IntegrationLiveAccounts.createEdgeServerAccounts(IntegrationLiveAccounts.java:745)
+        at com.webmethods.is.integrationlive.account.IntegrationLiveAccounts.loadTenantAccountInfo(IntegrationLiveAccounts.java:805)
+        at wm.client.integrationlive.admin.loadTenantAccountInfo(admin.java:71)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:586)
+        at com.wm.app.b2b.server.JavaService.baseInvoke(JavaService.java:417)
+        at com.wm.app.b2b.server.invoke.InvokeManager.process(InvokeManager.java:915)
+        at com.wm.app.b2b.server.util.tspace.ReservationProcessor.process(ReservationProcessor.java:39)
+        at com.wm.app.b2b.server.invoke.PayloadPersistenceProcessor.process(PayloadPersistenceProcessor.java:121)
+        at com.wm.app.b2b.server.invoke.StatisticsProcessor.process(StatisticsProcessor.java:77)
+        at com.wm.app.b2b.server.invoke.ServiceCompletionImpl.process(ServiceCompletionImpl.java:283)
+        at com.wm.app.b2b.server.invoke.ValidateProcessor.process(ValidateProcessor.java:51)
+        at com.wm.app.b2b.server.invoke.PipelineProcessor.process(PipelineProcessor.java:171)
+        at com.wm.app.b2b.server.ACLManager.process(ACLManager.java:374)
+        at com.wm.app.b2b.server.invoke.DispatchProcessor.process(DispatchProcessor.java:33)
+        at com.wm.app.b2b.server.invoke.ConcurrentRequestLimitProcessor.process(ConcurrentRequestLimitProcessor.java:62)
+        at com.wm.app.b2b.server.AuditLogManager.process$original$Ejkvnh0S(AuditLogManager.java:440)
+        at com.wm.app.b2b.server.AuditLogManager.process$original$Ejkvnh0S$accessor$ijPIITh8(AuditLogManager.java)
+        at com.wm.app.b2b.server.AuditLogManager$auxiliary$qng9qaBv.call(Unknown Source)
+        at org.apache.skywalking.apm.agent.core.plugin.interceptor.enhance.InstMethodsInter.intercept(InstMethodsInter.java:95)
+        at com.wm.app.b2b.server.AuditLogManager.process(AuditLogManager.java)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:736)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:463)
+        at com.wm.app.b2b.server.invoke.InvokeManager.invoke(InvokeManager.java:421)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:261)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:117)
+        at com.wm.app.b2b.server.ServiceManager.invoke(ServiceManager.java:76)
+        at com.wm.app.b2b.server.SessionInvoke.run(SessionInvoke.java:37)
+        at com.wm.util.pool.PooledThread.run(PooledThread.java:127)
+        at java.base/java.lang.Thread.run(Thread.java:1600)
+Caused by: java.lang.RuntimeException: com.pcbsys.nirvana.client.nIllegalArgumentException: Invalid url supplied : <null>
+        at com.wm.hybridinvoke.factories.ProcessorLoader.createProcessor(ProcessorLoader.java:58)
+        at com.webmethods.is.integrationlive.connector.client.um.ServiceProcessorImpl.createProcessor(ServiceProcessorImpl.java:248)
+        at com.webmethods.is.integrationlive.connector.client.um.ServiceProcessorImpl.startMessagingModule(ServiceProcessorImpl.java:173)
+        at com.webmethods.is.integrationlive.connector.client.um.ListenersManager.startListener(ListenersManager.java:223)
+        at com.webmethods.is.integrationlive.connector.client.um.ListenersManager.enableListener(ListenersManager.java:115)
+        ... 57 more
+Caused by: com.pcbsys.nirvana.client.nIllegalArgumentException: Invalid url supplied : <null>
+        at com.pcbsys.nirvana.base.UrlProcessor.processFailOverString(UrlProcessor.java:79)
+        at com.pcbsys.nirvana.base.UrlProcessor.processURL(UrlProcessor.java:55)
+        at com.pcbsys.nirvana.client.nSessionAttributes.<init>(nSessionAttributes.java:349)
+        at com.wm.hybridinvoke.um.pool.SessionFactory.getnSessionAttributes(SessionFactory.java:63)
+        at com.wm.hybridinvoke.um.pool.SessionFactory.createNewSession(SessionFactory.java:30)
+        at com.wm.hybridinvoke.um.pool.producer.ProducerSessionPool.createSession(ProducerSessionPool.java:40)
+        at com.wm.hybridinvoke.um.pool.producer.ProducerSessionPool.createSession(ProducerSessionPool.java:21)
+        at com.wm.hybridinvoke.um.pool.SessionPool.<init>(SessionPool.java:60)
+        at com.wm.hybridinvoke.um.pool.producer.ProducerSessionPool.<init>(ProducerSessionPool.java:30)
+        at com.wm.hybridinvoke.um.pool.producer.ProducerSessionManager.createSessionPool(ProducerSessionManager.java:43)
+        at com.wm.hybridinvoke.um.pool.producer.ProducerSessionManager.createSessionPool(ProducerSessionManager.java:19)
+        at com.wm.hybridinvoke.um.pool.SessionManager.processAddURLList(SessionManager.java:89)
+        at com.wm.hybridinvoke.um.pool.producer.ProducerSessionManager.<init>(ProducerSessionManager.java:35)
+        at com.wm.hybridinvoke.processor.um.UniversalMessagingProcessor.<init>(UniversalMessagingProcessor.java:97)
+        at com.wm.hybridinvoke.processor.um.UniversalMessagingProcessorFactory.initFactory(UniversalMessagingProcessorFactory.java:46)
+        at com.wm.hybridinvoke.processor.um.UniversalMessagingProcessorFactory.initFactory(UniversalMessagingProcessorFactory.java:32)
+        at com.wm.hybridinvoke.factories.ProcessorLoader.createProcessor(ProcessorLoader.java:56)
+        ... 61 more
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0028.0012I] (tid=36) WmCloud: Startup service (wm.client.integrationlive.admin:scheduleTenantMonitoringTask) 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0028.0012I] (tid=36) WmCloud: Startup service (wm.client.integrationlive.connector:initConnectors) 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0028.0012I] (tid=36) WmCloud: Startup service (wm.client.integrationlive.admin:executeTenantUpdateInfo) 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0028.0012I] (tid=36) WmAdmin: Startup service (wm.admin.controller:init) 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0021.8094W] (tid=746) No alerts were generated for fixes because required data is missing from the p2 profile in the installation directory. 
+ISSERVER|| 2026-09-02 08:15:16 GMT [ISS.0028.0012I] (tid=36) WmART: Startup service (wm.art.admin:startup) 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0028.0012I] (tid=36) WmFlatFile: Startup service (wm.server.ff:init) 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0028.0012I] (tid=36) WmFlatFile: Startup service (wm.server.ff:setACLs) 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0028.0012I] (tid=36) WmEDI: Startup service (wm.b2b.edi.templateMgr:init) 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0028.0012I] (tid=36) WmEDI: Startup service (wm.b2b.edi.util.formatServices:init) 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0028.0012I] (tid=36) WmEDI: Startup service (wm.b2b.edi.util.GUI:init) 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0098.0021I] (tid=36) Persistent Trigger Output Dispatcher started 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0098.0021I] (tid=36) Volatile Trigger Output Dispatcher started 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0098.0027I] (tid=36) PersistenceManager started all Stores 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0025.0036I] (tid=36) Dispatcher started 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0025.0013I] (tid=36) Cache Sweeper started 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISP.0046.0012I] (tid=36) Enabling HTTP Listener on port 9999 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISP.0046.0012I] (tid=36) Enabling HTTP Listener on port 5555 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISP.0046.0012I] (tid=36) Enabling HTTPS Listener on port 5543 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0035.0003I] (tid=36) Log rotation interval set to 1440 minutes. 
+ISSERVER|| 2026-09-02 08:15:17 GMT [ISS.0014.0044I] (tid=36) Cron Daemon Pool thread pool increased by 10 threads, current maximum is 25. 
+ISSERVER|| 2026-09-02 08:15:18 GMT [ISS.0025.0057I] (tid=36) Reading system level information 
+08:15:18,035 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+08:15:18,036 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+ISSERVER|| 2026-09-02 08:15:18 GMT [ISS.0175.0001I] (tid=36) Disabling notifier: wmio_bridge_alerts 
+ISSERVER|| 2026-09-02 08:15:18 GMT [ISS.0025.0076I] (tid=36) Log4j Version: 2.25.4 
+ISSERVER|| 2026-09-02 08:15:18 GMT [ISS.0014.0002I] (tid=36) Initialization completed in 62,549 milliseconds. 
+ISSERVER|| 2026-09-02 08:15:18 GMT [ISS.0021.9999I] (tid=745) Initializing Hybrid Invoke Client (hybrid.version.2.0.2) 
+ISSERVER|| 2026-09-02 08:15:18 GMT [ISS.0025.0016I] (tid=36) Config File Directory Saved 
+ISSERVER|| 2026-09-02 08:15:18 GMT [CLS.0010.0020W] (tid=732) Consumer file [/opt/webmethods/IntegrationServer/packages/WmCloudStreams/config/resources/consumers/consumers.xml] could not be found! Could not load Consumer information into CloudStreams. 
+ISSERVER|| 2026-09-02 08:15:18 GMT [CLS.0010.0320I] (tid=732) Read 0 registered consumer names from /opt/webmethods/IntegrationServer/packages/WmCloudStreams/config/resources/consumers/registeredNames.xml 
+ISSERVER|| 2026-09-02 08:15:20 GMT [ISS.0178.8899E] (tid=58) EdgeRuntime pinger thread stopped. 
+ISSERVER|| 2026-09-02 08:15:25 GMT [CLS.0203.0013W] (tid=728) No value defined in CCC cache for this key: currentInterval 
+09:15:18,005 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+09:15:18,005 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+10:15:18,006 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+10:15:18,007 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+11:15:18,005 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+11:15:18,006 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+12:15:18,008 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+12:15:18,009 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+13:15:18,009 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+13:15:18,010 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+ISSERVER|| 2026-09-02 14:15:03 GMT [ISS.0045.0088I] (tid=720) A restart action for the IS Statistics Data Collector is underway. 
+ISSERVER|| 2026-09-02 14:15:03 GMT [ISS.0045.0100I] (tid=1540) IS Statistics Data Collector index is OPEN for updates.  Mode: CREATE_OR_APPEND 
+ISSERVER|| 2026-09-02 14:15:03 GMT [ISS.0045.0089I] (tid=1540) IS Statistics Data Collector Restart successfully completed in 524 milliseconds 
+14:15:18,010 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+14:15:18,010 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+15:15:18,009 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+15:15:18,010 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+ISSERVER|| 2026-09-02 15:18:23 GMT [ISS.0053.0020W] (tid=264) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:20:45 GMT [ISS.0053.0020W] (tid=262) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:21:27 GMT [ISS.0053.0020W] (tid=262) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:21:27 GMT [ISS.0053.0020W] (tid=262) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:50:26 GMT [ISS.0053.0020W] (tid=259) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:50:42 GMT [ISS.0053.0020W] (tid=259) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:50:56 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:50:56 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:50:56 GMT [ISS.0053.0020W] (tid=259) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:51:28 GMT [ISS.0053.0020W] (tid=260) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:51:28 GMT [ISS.0053.0020W] (tid=262) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:53:04 GMT [ISS.0053.0020W] (tid=260) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:53:07 GMT [ISS.0053.0020W] (tid=260) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:53:27 GMT [ISS.0012.0012W] (tid=264) Authentication of user " {ږ'" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:53:27 GMT [ISS.0053.0002C] (tid=264) Access denied for user  {ږ' on port 5555 -> '' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:54:15 GMT [ISS.0053.0020W] (tid=262) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:54:15 GMT [ISS.0053.0020W] (tid=264) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:02 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:02 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:02 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:02 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:02 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:02 GMT [ISS.0053.0020W] (tid=259) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:06 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:08 GMT [ISS.0012.0012W] (tid=259) Authentication of user "" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:55:08 GMT [ISS.0053.0002C] (tid=259) Access denied for user  on port 5555 -> 'cgi-bin/services/Walrus' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:55:08 GMT [ISS.0012.0012W] (tid=259) Authentication of user "" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:55:08 GMT [ISS.0053.0002C] (tid=259) Access denied for user  on port 5555 -> 'scripts/services/Walrus' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:55:08 GMT [ISS.0012.0012W] (tid=261) Authentication of user "" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:55:08 GMT [ISS.0053.0002C] (tid=261) Access denied for user  on port 5555 -> 'services/Walrus' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:55:09 GMT [ISS.0053.0020W] (tid=259) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:55:10 GMT [ISS.0053.0020W] (tid=259) HTTP/0.9 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:57:26 GMT [ISS.0053.0020W] (tid=264) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:58:16 GMT [ISS.0053.0020W] (tid=261) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0012.0012W] (tid=262) Authentication of user "' or '1=1" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0053.0002C] (tid=262) Access denied for user ' or '1=1 on port 5555 -> 'vicidial/admin.php' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0012.0012W] (tid=262) Authentication of user "' or '1=1" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0053.0002C] (tid=262) Access denied for user ' or '1=1 on port 5555 -> 'cgi-bin/admin.php' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0012.0012W] (tid=262) Authentication of user "' or '1=1" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0053.0002C] (tid=262) Access denied for user ' or '1=1 on port 5555 -> 'scripts/admin.php' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0012.0012W] (tid=261) Authentication of user "' or '1=1" failed with exception: Login Failure: all modules ignored. 
+ISSERVER|| 2026-09-02 15:58:19 GMT [ISS.0053.0002C] (tid=261) Access denied for user ' or '1=1 on port 5555 -> 'admin.php' from 9.30.183.72. 
+ISSERVER|| 2026-09-02 15:58:41 GMT [ISS.0053.0020W] (tid=264) HTTP/1.0 rejected. Minimum required version is HTTP/1.1 
+16:15:18,011 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+16:15:18,012 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+17:15:18,012 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+17:15:18,013 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+18:15:18,012 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+18:15:18,013 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+19:15:18,012 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+19:15:18,012 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+ISSERVER|| 2026-09-02 20:15:03 GMT [ISS.0045.0088I] (tid=1543) A restart action for the IS Statistics Data Collector is underway. 
+ISSERVER|| 2026-09-02 20:15:04 GMT [ISS.0045.0100I] (tid=2312) IS Statistics Data Collector index is OPEN for updates.  Mode: CREATE_OR_APPEND 
+ISSERVER|| 2026-09-02 20:15:04 GMT [ISS.0045.0089I] (tid=2312) IS Statistics Data Collector Restart successfully completed in 514 milliseconds 
+20:15:18,016 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+20:15:18,016 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+21:15:18,010 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+21:15:18,011 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+22:15:18,011 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+22:15:18,012 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+23:15:18,012 - 2026.09.02    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+23:15:18,013 - 2026.09.02    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+00:15:18,015 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+00:15:18,016 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+01:15:18,014 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+01:15:18,015 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+ISSERVER|| 2026-09-03 02:15:04 GMT [ISS.0045.0088I] (tid=2314) A restart action for the IS Statistics Data Collector is underway. 
+ISSERVER|| 2026-09-03 02:15:04 GMT [ISS.0045.0100I] (tid=3066) IS Statistics Data Collector index is OPEN for updates.  Mode: CREATE_OR_APPEND 
+ISSERVER|| 2026-09-03 02:15:04 GMT [ISS.0045.0089I] (tid=3066) IS Statistics Data Collector Restart successfully completed in 616 milliseconds 
+02:15:18,011 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+02:15:18,012 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+03:15:18,010 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+03:15:18,010 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+04:15:18,011 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+04:15:18,012 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+05:15:18,015 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+05:15:18,015 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+06:15:18,013 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+06:15:18,013 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+07:15:18,013 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+07:15:18,014 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}    
+ISSERVER|| 2026-09-03 08:14:25 GMT [ISS.0178.0095E] (tid=3807) Failed to retrieve License for agentId 7ef1802d0fa8439fac53507061b3322c with url https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com. Details: https://dev1878880.a-vir-c2.int.ipaas.dev.automation.ibm.com/integration/rest/internal/edge/agent/license. 
+ISSERVER|| 2026-09-03 08:14:25 GMT [ISS.0178.0076W] (tid=3807) License Key is not available for the Tenant. 
+ISSERVER|| 2026-09-03 08:15:04 GMT [ISS.0045.0088I] (tid=3069) A restart action for the IS Statistics Data Collector is underway. 
+ISSERVER|| 2026-09-03 08:15:05 GMT [ISS.0045.0100I] (tid=3818) IS Statistics Data Collector index is OPEN for updates.  Mode: CREATE_OR_APPEND 
+ISSERVER|| 2026-09-03 08:15:05 GMT [ISS.0045.0089I] (tid=3818) IS Statistics Data Collector Restart successfully completed in 446 milliseconds 
+ISSERVER|| 2026-09-03 08:15:16 GMT [ISS.0021.8094W] (tid=746) No alerts were generated for fixes because required data is missing from the p2 profile in the installation directory. 
+08:15:18,013 - 2026.09.03    [com.w.m.a.i.u.MeteringTokenUtils             ]    CONFIG    Metering token read from system property    
+08:15:18,013 - 2026.09.03    [com.w.m.a.i.l.TokenDataExtractor             ]    CONFIG    Metering token configured: TokenDataExtractor{customerAccountId=20250625-1754-0451-6085-6d68caf35c29, customerName=mcsp-new-dev-account, environmentName=dev1878880, serialNumber=dev1878880_99427260001883730821-1776234432905, key=161F5CA903FD486859B58385C854801FEDAAF3059890199F1B3FCB901D1A428D, meteringURL=https://usage-analytics.a-vir-c2.uanalytics.ipaas.dev.automation.ibm.com/api/measurements}
+

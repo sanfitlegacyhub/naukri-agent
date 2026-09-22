@@ -1,0 +1,35 @@
+name: Naukri Profile Agent
+
+on:
+  schedule:
+    # Every day at 9 AM IST = 3:30 AM UTC
+    - cron: '30 3 * * *'
+  workflow_dispatch:   # manual trigger from GitHub UI anytime
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r naukri-agent/requirements.txt
+
+      - name: Run Naukri Agent
+        env:
+          NAUKRI_EMAIL:    ${{ secrets.NAUKRI_EMAIL }}
+          NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
+          GMAIL_USER:      ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
+          NOTIFY_EMAIL:    ${{ secrets.NOTIFY_EMAIL }}
+          RESUME_PATH:     resume/Santhosh_Devops_Engineer.pdf
+        run: python naukri-agent/naukri_agent.py
