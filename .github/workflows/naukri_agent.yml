@@ -14,15 +14,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          clean: true
+
+      - name: Show script version (verify latest code)
+        run: |
+          echo "=== Git commit ==="
+          git log --oneline -1
+          echo "=== First 40 lines of agent ==="
+          head -40 naukri-agent/naukri_agent.py
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
-        run: pip install -r naukri-agent/requirements.txt
+        run: pip install --no-cache-dir -r naukri-agent/requirements.txt
 
       - name: Run Naukri Agent
         env:
