@@ -77,16 +77,26 @@ def login(driver: webdriver.Chrome, email: str, password: str):
         pass_field.send_keys(ch)
         time.sleep(0.03)
 
-    time.sleep(0.5)
-    login_btn = wait.until(EC.element_to_be_clickable(
-        (By.XPATH, "//button[@type='submit' and contains(@class,'login')]")
+    time.sleep(1)
+    login_btn = wait.until(EC.presence_of_element_located(
+        (By.XPATH, "//button[@type='submit' or contains(@class,'loginButton') or text()='Login']")
     ))
-    login_btn.click()
+    driver.execute_script("arguments[0].click();", login_btn)
     log("Submitted login credentials.")
 
-    time.sleep(5)
+    # Wait for login redirect
+    for _ in range(10):
+        time.sleep(1)
+        if "nlogin" not in driver.current_url.lower():
+            break
+
     if "nlogin" in driver.current_url.lower():
-        raise RuntimeError("Login failed: Still on login page after submission.")
+        # Check if error message is present
+        try:
+            err = driver.find_element(By.XPATH, "//*[contains(@class,'server-err') or contains(@class,'error')]").text
+            raise RuntimeError(f"Login failed: {err}")
+        except Exception:
+            raise RuntimeError("Login failed: Still on login page after submission.")
     log("Logged in successfully.")
 
 
