@@ -71,10 +71,13 @@ API_BASE    = "https://www.naukri.com/central-login-services/v1"
 PROFILE_API = "https://www.naukri.com/profile-services/v1"
 
 HEADERS = {
-    "User-Agent" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
-    "Accept"     : "application/json",
-    "appid"      : "109",
-    "systemid"   : "Naukri",
+    "User-Agent"      : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
+    "Accept"          : "application/json",
+    "Content-Type"    : "application/json",
+    "appid"           : "109",
+    "systemid"        : "Naukri",
+    "gaid"            : "UA-16525951-5",
+    "Clientid"        : "d3skt0p",
 }
 
 # ─── Session ──────────────────────────────────────────────────────────────────
@@ -93,26 +96,23 @@ def log(msg: str):
 # ─── Step 1 : Login ───────────────────────────────────────────────────────────
 def login() -> str:
     log("Logging in to Naukri...")
-    # Debug: confirm secrets loaded correctly (password masked)
-    log(f"  NAUKRI_EMAIL    = '{NAUKRI_EMAIL}'")
-    log(f"  NAUKRI_PASSWORD = '{'*' * len(NAUKRI_PASSWORD) if NAUKRI_PASSWORD else 'EMPTY!!!'}'")
 
+    # Step 1a — get CSRF / cookies from homepage first
+    session.get("https://www.naukri.com", timeout=15)
+
+    # Step 1b — login with correct Naukri v2 payload
     resp = session.post(
-        f"{API_BASE}/login",
+        "https://www.naukri.com/central-login-services/v2/login",
         json={
-            "username": NAUKRI_EMAIL,
-            "password": NAUKRI_PASSWORD,
-        },
-        headers={
-            **session.headers,
-            "Content-Type": "application/json",
-            "appid"       : "109",
-            "systemid"    : "Naukri",
+            "username"    : NAUKRI_EMAIL,
+            "password"    : NAUKRI_PASSWORD,
+            "type"        : "login",
         },
         timeout=30,
     )
-    if resp.status_code != 200:
-        raise RuntimeError(f"Login failed — HTTP {resp.status_code}: {resp.text[:300]}")
+    log(f"  Login HTTP status: {resp.status_code}")
+    if resp.status_code not in (200, 201):
+        raise RuntimeError(f"Login failed — HTTP {resp.status_code}: {resp.text[:400]}")
 
     data = resp.json()
     token = (
