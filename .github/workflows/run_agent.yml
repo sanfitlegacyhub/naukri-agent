@@ -1,66 +1,27 @@
-name: Naukri Daily Agent
+name: Naukri Daily Resume Update
 
 on:
   schedule:
-    - cron: '30 3 * * *'
+    - cron: '30 3 * * *'  # 9:00 AM IST daily
   workflow_dispatch:
 
 jobs:
-  run:
+  update-resume:
     runs-on: self-hosted
     timeout-minutes: 10
 
-    env:
-      NAUKRI_EMAIL: ${{ secrets.NAUKRI_EMAIL }}
-      NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
-      GMAIL_USER: ${{ secrets.GMAIL_USER }}
-      GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
-      NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
-      RESUME_PATH: resume/Santhosh_Devops_Engineer.pdf
-      AGENT_TOOLSDIRECTORY: /Users/sanfitlegacyhub/hostedtoolcache
-      RUNNER_TOOL_CACHE: /Users/sanfitlegacyhub/hostedtoolcache
-
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Verify secrets loaded
-        run: |
-          echo "NAUKRI_EMAIL length   : ${#NAUKRI_EMAIL}"
-          echo "NAUKRI_PASSWORD length: ${#NAUKRI_PASSWORD}"
-          echo "GMAIL_USER length     : ${#GMAIL_USER}"
-          echo "GMAIL_APP_PASS length : ${#GMAIL_APP_PASS}"
-          echo "NOTIFY_EMAIL length   : ${#NOTIFY_EMAIL}"
-
-      - name: Check Python
-        run: |
-          python3 --version
-          pip3 --version
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: pip3 install selenium webdriver-manager
-
-      - name: Debug env vars
         run: |
-          if [ -z "$NAUKRI_EMAIL" ]; then
-            echo "❌ NAUKRI_EMAIL is EMPTY"
-          else
-            echo "✅ NAUKRI_EMAIL is set (length: ${#NAUKRI_EMAIL})"
-          fi
-          if [ -z "$NAUKRI_PASSWORD" ]; then
-            echo "❌ NAUKRI_PASSWORD is EMPTY"
-          else
-            echo "✅ NAUKRI_PASSWORD is set (length: ${#NAUKRI_PASSWORD})"
-          fi
-          if [ -z "$GMAIL_USER" ]; then
-            echo "❌ GMAIL_USER is EMPTY"
-          else
-            echo "✅ GMAIL_USER is set (length: ${#GMAIL_USER})"
-          fi
-          if [ -z "$GMAIL_APP_PASS" ]; then
-            echo "❌ GMAIL_APP_PASS is EMPTY"
-          else
-            echo "✅ GMAIL_APP_PASS is set (length: ${#GMAIL_APP_PASS})"
-          fi
+          pip3 install -r agent/requirements.txt
 
-      - name: Run Naukri Agent
-        run: python3 agent/naukri_agent.py
+      - name: Run Resume Update Agent
+        env:
+          NAUKRI_EMAIL: ${{ secrets.NAUKRI_EMAIL }}
+          NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
+          RESUME_PATH: resume/Santhosh_Devops_Engineer.pdf
+        run: |
+          python3 agent/naukri_agent.py
