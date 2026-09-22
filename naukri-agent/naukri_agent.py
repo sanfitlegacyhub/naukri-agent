@@ -57,11 +57,10 @@ API_BASE    = "https://www.naukri.com/central-login-services/v1"
 PROFILE_API = "https://www.naukri.com/profile-services/v1"
 
 HEADERS = {
-    "User-Agent"      : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
-    "Accept"          : "application/json",
-    "Content-Type"    : "application/json",
-    "appid"           : "109",
-    "systemid"        : "Naukri",
+    "User-Agent" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
+    "Accept"     : "application/json",
+    "appid"      : "109",
+    "systemid"   : "Naukri",
 }
 
 # ─── Session ──────────────────────────────────────────────────────────────────
