@@ -97,32 +97,37 @@ def log(msg: str):
 def login() -> str:
     log("Logging in to Naukri...")
 
-    # Step 1a — fetch homepage to get initial cookies
-    session.get("https://www.naukri.com/", timeout=15)
+    # Step 1a — visit login page first to get required cookies (nauk_ps etc.)
+    login_page = session.get(
+        "https://www.naukri.com/nlogin/login",
+        headers={**session.headers, "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"},
+        timeout=15,
+    )
+    log(f"  Login page status : {login_page.status_code}")
+    log(f"  Cookies after page: {list(session.cookies.keys())}")
 
-    # Step 1b — try all known Naukri login endpoints
-    endpoints = [
-        ("POST", "https://www.naukri.com/central-login-services/v1/login",
-         {"username": NAUKRI_EMAIL, "password": NAUKRI_PASSWORD}),
-        ("POST", "https://www.naukri.com/login",
-         {"username": NAUKRI_EMAIL, "password": NAUKRI_PASSWORD}),
-        ("POST", "https://www.naukri.com/jobseeker/login",
-         {"username": NAUKRI_EMAIL, "password": NAUKRI_PASSWORD}),
-    ]
+    # Step 1b — POST login with nested loginDetails wrapper (required by Naukri API)
+    resp = session.post(
+        "https://www.naukri.com/central-login-services/v1/login",
+        json={
+            "loginDetails": {
+                "username": NAUKRI_EMAIL,
+                "password": NAUKRI_PASSWORD,
+                "userType": "1",
+            }
+        },
+        headers={
+            **session.headers,
+            "Referer"      : "https://www.naukri.com/nlogin/login",
+            "Origin"       : "https://www.naukri.com",
+        },
+        timeout=30,
+    )
+    log(f"  Login API status  : {resp.status_code}")
+    log(f"  Login response    : {resp.text[:300]}")
 
-    resp = None
-    for method, url, payload in endpoints:
-        log(f"  Trying: {url}")
-        resp = session.post(url, json=payload, timeout=30)
-        log(f"  Status: {resp.status_code}")
-        if resp.status_code in (200, 201):
-            log(f"  ✅ Login succeeded at: {url}")
-            break
-        else:
-            log(f"  ❌ Failed: {resp.text[:150]}")
-
-    if resp is None or resp.status_code not in (200, 201):
-        raise RuntimeError(f"All login endpoints failed. Last status: {resp.status_code if resp else 'N/A'}")
+    if resp.status_code not in (200, 201):
+        raise RuntimeError(f"Login failed — HTTP {resp.status_code}: {resp.text[:400]}")
 
     data = resp.json()
     token = (
