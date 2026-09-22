@@ -23,7 +23,7 @@ jobs:
           echo "=== Git commit ==="
           git log --oneline -1
           echo "=== First 40 lines of agent ==="
-          head -40 naukri-agent/naukri_agent.py
+          head -40 agent/naukri_agent.py
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,7 +31,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install --no-cache-dir -r naukri-agent/requirements.txt
+        run: pip install --no-cache-dir -r agent/requirements.txt
 
       - name: Run Naukri Agent
         env:
@@ -41,4 +41,4 @@ jobs:
           GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
           NOTIFY_EMAIL:    ${{ secrets.NOTIFY_EMAIL }}
           RESUME_PATH:     resume/Santhosh_Devops_Engineer.pdf
-        run: python naukri-agent/naukri_agent.py
+        run: python agent/naukri_agent.py
