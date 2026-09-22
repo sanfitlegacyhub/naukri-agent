@@ -23,10 +23,11 @@ jobs:
 
       - name: Verify secrets loaded
         run: |
-          echo "NAUKRI_EMAIL is set: ${{ secrets.NAUKRI_EMAIL != '' }}"
-          echo "NAUKRI_PASSWORD is set: ${{ secrets.NAUKRI_PASSWORD != '' }}"
-          echo "GMAIL_USER is set: ${{ secrets.GMAIL_USER != '' }}"
-          echo "GMAIL_APP_PASS is set: ${{ secrets.GMAIL_APP_PASS != '' }}"
+          echo "NAUKRI_EMAIL length   : ${#NAUKRI_EMAIL}"
+          echo "NAUKRI_PASSWORD length: ${#NAUKRI_PASSWORD}"
+          echo "GMAIL_USER length     : ${#GMAIL_USER}"
+          echo "GMAIL_APP_PASS length : ${#GMAIL_APP_PASS}"
+          echo "NOTIFY_EMAIL length   : ${#NOTIFY_EMAIL}"
 
       - uses: actions/setup-python@v5
         with:
